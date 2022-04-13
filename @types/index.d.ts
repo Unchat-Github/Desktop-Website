@@ -36,3 +36,9 @@ export interface Message {
   attachments: [];
   content: string;
 }
+
+export interface Notification {
+  author: User;
+  value: string;
+  type: string;
+}

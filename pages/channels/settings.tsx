@@ -5,6 +5,7 @@ import userOnlyRoute from "../../@routes/userOnly";
 import { User } from "../../@types";
 import AppContainer from "../../components/Containers/AppContainer";
 import { useDropzone } from "react-dropzone";
+import sharp from "sharp";
 
 interface Props {
   user: User;
@@ -13,6 +14,7 @@ interface Props {
 
 export default function Settings({ user, token }: Props) {
   const [avatar, setAvatar] = useState(user.avatar);
+  const [username, setUsername] = useState<string>();
 
   const onAccept = useCallback((files: File[]) => {
     const file = files[0];
@@ -72,6 +74,8 @@ export default function Settings({ user, token }: Props) {
                   maxLength={35}
                   spellCheck={false}
                   placeholder={"Enter your new username"}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
                 <textarea className="rounded-md outline-none h-[5rem] w-[25rem] bg-main-500 px-1 py-1 text-gray-100" />
               </div>

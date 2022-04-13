@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { withSessionSsr } from "../../@lib/session";
-import userOnlyRoute from "../../@routes/userOnly";
-import { Channel, User } from "../../@types";
-import ChannelSidebar from "../../components/App/ChannelSidebar";
-import AppContainer from "../../components/Containers/AppContainer";
+import { withSessionSsr } from "../../../@lib/session";
+import userOnlyRoute from "../../../@routes/userOnly";
+import { Channel, User } from "../../../@types";
+import ChannelSidebar from "../../../components/App/ChannelSidebar";
+import AppContainer from "../../../components/Containers/AppContainer";
 
 interface Props {
   user: User;
